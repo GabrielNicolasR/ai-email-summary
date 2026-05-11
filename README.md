@@ -15,7 +15,7 @@ Projeto simples em Python utilizando a API do Gemini para resumir emails automat
 ### 1. Clone o repositório
 
 ```bash
-git clone URL_DO_SEU_REPOSITORIO
+git clone https://github.com/GabrielNicolasR/ai-email-summary.git
 ```
 
 ---
