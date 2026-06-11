@@ -1,4 +1,4 @@
-# Email Summarizer with Gemini AI | Resumidor de Emails com Gemini AI
+# AI Email Summarizer with LangChain & OpenAI
 
 [English](#english) | [Português](#português)
 
@@ -6,13 +6,21 @@
 
 ## English
 
-Simple Python project using the Gemini API to automatically summarize emails.
+Simple Python project using LangChain and OpenAI to automatically summarize emails with structured output (Topic, Priority, and Summary).
 
 ### Technologies Used
 
 - Python
-- Gemini API
+- LangChain
+- OpenAI API
+- Pydantic
 - python-dotenv
+
+### Features
+
+- **Structured Output:** Each email is processed to extract the main topic, priority level (High, Medium, Low), and a concise summary.
+- **Pydantic Models:** Uses Pydantic for robust data validation and structured JSON output.
+- **LangChain Expression Language (LCEL):** Implements a clean chain for prompt management and model invocation.
 
 ### How to Run the Project
 
@@ -35,7 +43,8 @@ Inside the project, create a file named `.env`
 Example:
 
 ```env
-GOOGLE_API_KEY=your-key-here
+OPENAI_API_KEY=your-key-here
+OPENAI_MODEL=gpt-4o-mini
 ```
 
 #### 4. Run the project
@@ -48,13 +57,21 @@ python app.py
 
 ## Português
 
-Projeto simples em Python utilizando a API do Gemini para resumir emails automaticamente.
+Projeto simples em Python utilizando LangChain e OpenAI para resumir emails automaticamente com saída estruturada (Tópico, Prioridade e Resumo).
 
 ### Tecnologias utilizadas
 
 - Python
-- Gemini API
+- LangChain
+- OpenAI API
+- Pydantic
 - python-dotenv
+
+### Funcionalidades
+
+- **Saída Estruturada:** Cada e-mail é processado para extrair o tópico principal, nível de prioridade (Alta, Média, Baixa) e um resumo conciso.
+- **Modelos Pydantic:** Utiliza Pydantic para validação robusta de dados e saída JSON estruturada.
+- **LangChain Expression Language (LCEL):** Implementa uma cadeia limpa para gerenciamento de prompts e invocação do modelo.
 
 ### Como executar o projeto
 
@@ -77,7 +94,8 @@ Dentro do projeto, crie um arquivo chamado `.env`
 Exemplo:
 
 ```env
-GOOGLE_API_KEY=sua-chave-aqui
+OPENAI_API_KEY=sua-chave-aqui
+OPENAI_MODEL=gpt-4o-mini
 ```
 
 #### 4. Execute o projeto
