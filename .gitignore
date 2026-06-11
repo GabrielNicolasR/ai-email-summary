@@ -1,5 +1,5 @@
 venv/
 .env
 __pycache__/
+lista-de-resumos.txt
 *.pyc
-*.txt

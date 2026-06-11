@@ -9,6 +9,10 @@ from emails import emails
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
+if not api_key:
+    print("Erro: A variável de ambiente OPENAI_API_KEY não foi encontrada.")
+    exit(1)
+
 class ResumoEmail(BaseModel):
     resumo: str = Field(description="Um resumo conciso do e-mail em poucas linhas")
     topico: str = Field(description="O tópico ou assunto principal abordado no e-mail")
@@ -40,7 +44,7 @@ modelo = ChatOpenAI(
 
 cadeia = prompt_resumo | modelo | parser
 
-def processar_e_resumir_emais(lista_de_emails):
+def processar_e_resumir_emails(lista_de_emails):
     lista_de_resumos = []
     
     for i, email in enumerate(lista_de_emails):
@@ -63,7 +67,7 @@ def processar_e_resumir_emais(lista_de_emails):
     return lista_de_resumos
 
 if __name__ == "__main__":
-    resumos_finais = processar_e_resumir_emais(emails)
+    resumos_finais = processar_e_resumir_emails(emails)
 
     with open("lista-de-resumos.txt", "w", encoding="utf-8") as arquivo:
         for item in resumos_finais:
